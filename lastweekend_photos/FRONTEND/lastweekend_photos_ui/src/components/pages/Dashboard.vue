@@ -3,24 +3,17 @@
     color: #000000;
   }
 
-  .bordered {
-    border: 1px black solid;
-  }
 
-  .image-box {
-    padding-right: 0px;
-    padding-left: 0px;
-  }
-
-  .cower-row {
+  .cover-row {
     position: absolute;
-    width: 100%;
+    width: 95%;
     z-index: 2;
     opacity: 0.8;
     color: #000000;
     background-color: #cccccc;
     -webkit-transform: translateY(-100%);
     transform: translateY(-100%);
+    margin-left:0px;
   }
 
   .element-box {
@@ -31,12 +24,12 @@
     cursor: pointer;
   }
 
-  .nav-item,.nav{
+  .nav-item, .nav {
     display: inline-table !important;
-    color:#000000;
+    color: #000000;
   }
 
-  .nav-link.active , .nav-link:hover{
+  .nav-link.active, .nav-link:hover {
     color: #000000 !important;
     border-color: #000000 !important;
   }
@@ -51,40 +44,41 @@
       <div class="kt-portlet__body">
         <div class="kt-portlet kt-portlet--tabs">
           <div class="kt-portlet__head">
-<input type="text" class="form-control" placeholder="Search photo - friends - groups...">
+            <input type="text" class="form-control" placeholder="Search photo - friends - groups...">
             <div class="kt-portlet__head-toolbar">
 
-              </div>
             </div>
-            <div class="kt-portlet__body">
-               <ul class="nav nav-tabs nav-tabs-line nav-tabs-line-brand nav-tabs-line-2x nav-tabs-line-right nav-tabs-bold text-center"
-                    role="tablist">
-                  <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#all_activity_tab_content"
-                       role="tab">
-                      All Activity
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#friends_tab_content" role="tab">
-                      Friends
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#groups_tab_content" role="tab">
-                      Groups
-                    </a>
-                  </li>
-                </ul>
-              <div class="tab-content">
-                <div class="tab-pane active" id="all_activity_tab_content" role="tabpanel">
-                  <form class="kt-form kt-form--label-right">
-                    <div class="kt-section kt-section--first">
-                      <div class="kt-section__body">
-                        <div class="form-group kt-form__group row">
-                          <div class="container">
-                            <div class="row mt-5">
-                              <div class="col-md-5 element-box mt-3 bordered" v-for="i in 4" v-bind:key="i">
+          </div>
+          <div class="kt-portlet__body">
+            <ul class="nav nav-tabs nav-tabs-line nav-tabs-line-brand nav-tabs-line-2x nav-tabs-line-right nav-tabs-bold text-center"
+                role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#all_activity_tab_content"
+                   role="tab">
+                  All Activity
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#friends_tab_content" role="tab">
+                  Friends
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#groups_tab_content" role="tab">
+                  Groups
+                </a>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="all_activity_tab_content" role="tabpanel">
+                <form class="kt-form kt-form--label-right">
+                  <div class="kt-section kt-section--first">
+                    <div class="kt-section__body">
+                      <div class="form-group kt-form__group row">
+                        <div class="container">
+                          <div class="row mt-5">
+                            <div class="col-md-5 element-box mt-3" v-for="i in 4" v-bind:key="i">
+                              <div class="thumbnail">
                                 <div class="row">
                                   <div class="col-md-2 text-center">
                                     <span class="la la-user h2"></span>
@@ -108,7 +102,7 @@
                                          style="width: 100%;height: auto;">
                                   </div>
                                 </div>
-                                <div class="row cower-row">
+                                <div class="row cover-row">
                                   man in laps
                                 </div>
                                 <div class="row h5">
@@ -136,34 +130,34 @@
                         </div>
                       </div>
                     </div>
+                  </div>
 
-                  </form>
-                </div>
-                <div class="tab-pane active" id="friends_tab_content" role="tabpanel">
-                  <form class="kt-form kt-form--label-right">
-                    <div class="kt-section kt-section--first">
-                      <div class="kt-section__body">
-                        <div class="form-group kt-form__group row">
-
-                        </div>
-
-                      </div>
-                    </div>
-
-                  </form>
-                </div>
-                <div class="tab-pane active" id="groups_tab_content" role="tabpanel">
-                  <form class="kt-form kt-form--label-right">
-                    <div class="kt-section kt-section--first">
-                      <div class="kt-section__body">
-                        <div class="form-group kt-form__group row">
-
-                        </div>
+                </form>
+              </div>
+              <div class="tab-pane active" id="friends_tab_content" role="tabpanel">
+                <form class="kt-form kt-form--label-right">
+                  <div class="kt-section kt-section--first">
+                    <div class="kt-section__body">
+                      <div class="form-group kt-form__group row">
 
                       </div>
+
                     </div>
-                  </form>
-                </div>
+                  </div>
+
+                </form>
+              </div>
+              <div class="tab-pane active" id="groups_tab_content" role="tabpanel">
+                <form class="kt-form kt-form--label-right">
+                  <div class="kt-section kt-section--first">
+                    <div class="kt-section__body">
+                      <div class="form-group kt-form__group row">
+
+                      </div>
+
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
