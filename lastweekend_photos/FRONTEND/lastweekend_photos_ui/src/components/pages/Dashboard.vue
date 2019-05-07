@@ -11,9 +11,10 @@
     opacity: 0.8;
     color: #000000;
     background-color: #cccccc;
-    -webkit-transform: translateY(-100%);
-    transform: translateY(-100%);
-    margin-left:0px;
+
+        bottom: 0px;
+    margin-left: 10px;
+    left: 0px;
   }
 
   .element-box {
@@ -32,6 +33,17 @@
   .nav-link.active, .nav-link:hover {
     color: #000000 !important;
     border-color: #000000 !important;
+  }
+
+  .thumbnail {
+    padding: 4px;
+    line-height: 1.42857;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
   }
 </style>
 
@@ -100,10 +112,8 @@
                                   <div class="col-12 image-box">
                                     <img v-bind:src="'img'+i+'.jpg'"
                                          style="width: 100%;height: auto;">
+                                    <span class="cover-row">man in laps</span>
                                   </div>
-                                </div>
-                                <div class="row cover-row">
-                                  man in laps
                                 </div>
                                 <div class="row h5">
                                   <div class="col-md-2 text-center">
