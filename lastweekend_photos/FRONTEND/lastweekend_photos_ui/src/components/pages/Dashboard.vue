@@ -11,8 +11,7 @@
     opacity: 0.8;
     color: #000000;
     background-color: #cccccc;
-
-        bottom: 0px;
+    bottom: 0px;
     margin-left: 10px;
     left: 0px;
   }
@@ -110,7 +109,7 @@
                                 </div>
                                 <div class="row">
                                   <div class="col-12 image-box">
-                                    <img v-bind:src="'img'+i+'.jpg'"
+                                    <img v-bind:src="'resources/images/'+'img'+i+'.jpg'"
                                          style="width: 100%;height: auto;">
                                     <span class="cover-row">man in laps</span>
                                   </div>
@@ -181,15 +180,6 @@
   import PageBar from "../partials/PageBar";
 
   export default {
-    mixins: [],
-    components: {PageBar,},
-    data: function () {
-      return;
-    },
-    created: function () {
-
-
-    },
-    methods: {},
+    components: { PageBar }
   }
 </script>
