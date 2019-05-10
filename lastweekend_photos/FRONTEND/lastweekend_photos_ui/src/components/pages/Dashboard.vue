@@ -44,6 +44,10 @@
     -o-transition: border .2s ease-in-out;
     transition: border .2s ease-in-out;
   }
+
+  .nav-tabs.nav-tabs-line.nav-tabs-line-brand.nav-tabs-line-2x{
+  border:none !important;;
+  }
 </style>
 
 <template>
@@ -53,14 +57,14 @@
 
     <div class="kt-portlet">
       <div class="kt-portlet__body">
-        <div class="kt-portlet kt-portlet--tabs">
-          <div class="kt-portlet__head">
+<!--        <div class="kt-portlet kt-portlet&#45;&#45;tabs">-->
+<!--          <div class="kt-portlet__head">-->
             <input type="text" class="form-control" placeholder="Search photo - friends - groups...">
             <div class="kt-portlet__head-toolbar">
 
             </div>
           </div>
-          <div class="kt-portlet__body">
+<!--          <div class="kt-portlet__body">-->
             <ul class="nav nav-tabs nav-tabs-line nav-tabs-line-brand nav-tabs-line-2x nav-tabs-line-right nav-tabs-bold text-center"
                 role="tablist">
               <li class="nav-item">
@@ -87,7 +91,7 @@
                     <div class="kt-section__body">
                       <div class="form-group kt-form__group row">
                         <div class="container">
-                          <div class="row mt-5">
+                          <div class="row mt-3">
                             <div class="col-md-5 element-box mt-3" v-for="i in 4" v-bind:key="i">
                               <div class="thumbnail">
                                 <div class="row">
@@ -170,10 +174,10 @@
               </div>
             </div>
           </div>
-        </div>
+<!--        </div>-->
       </div>
-    </div>
-  </div>
+<!--    </div>-->
+<!--  </div>-->
 </template>
 
 <script>

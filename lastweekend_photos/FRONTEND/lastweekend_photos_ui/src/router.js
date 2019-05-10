@@ -6,6 +6,7 @@ import VueRouter from "vue-router";
 
 import Dashboard from "./components/pages/Dashboard";
 import MyProfile from "./components/pages/MyProfile";
+import MyPhotos from "./components/pages/MyPhotos";
 
 Vue.use(VueRouter);
 
@@ -13,23 +14,24 @@ export const routeNames = {
   ROOT: "root",
   DASHBOARD: "dashboard",
   MYPROFILE: "myprofile",
+  MYPHOTOS: "myphotos",
 };
 
 Vue.prototype.$rns = routeNames;
 
 const router = new VueRouter({
-  scrollBehavior: function(to, from, savedPosition) {
+  scrollBehavior: function (to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition;
     } else {
-      return { x: 0, y: 0 };
+      return {x: 0, y: 0};
     }
   },
   routes: [
     {
       path: "/",
       name: routeNames.ROOT,
-      redirect: { name: routeNames.DASHBOARD }
+      redirect: {name: routeNames.DASHBOARD}
     },
     {
       path: "/myprofile",
@@ -54,15 +56,26 @@ const router = new VueRouter({
       component: Dashboard
     },
     {
+      path: "/myphotos",
+      name: routeNames.MYPHOTOS,
+      meta: {
+        pageInfo: {
+          title: "My Photos",
+          titleDesc: "manage photos"
+        }
+      },
+      component: MyPhotos
+    },
+    {
       path: "*",
-      redirect: { name: routeNames.DASHBOARD }
+      redirect: {name: routeNames.DASHBOARD}
     }
   ]
 });
 
-router.afterEach(function(toRoute) {
+router.afterEach(function (toRoute) {
   var title = "Lastweekend-Photos :: ",
-    pageInfo = toRoute.meta.pageInfo || {};
+      pageInfo = toRoute.meta.pageInfo || {};
   if (pageInfo.title) {
     title = title + pageInfo.title + " :: ";
   }

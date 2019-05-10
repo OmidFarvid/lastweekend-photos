@@ -1,3 +1,8 @@
+<style>
+	#kt_wrapper{
+		padding-left: 0px;
+	}
+</style>
 <template>
   <div class="kt-grid kt-grid--hor kt-grid--root">
 		<div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
@@ -17,7 +22,7 @@
 			<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
 
 				<button class="kt-aside-close " id="kt_aside_close_btn"><i class="la la-close"></i></button>
-        <side-menu></side-menu>
+        <side-menu style="display: none;"></side-menu>
 
 				<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
           <main-header></main-header>
