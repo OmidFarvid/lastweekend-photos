@@ -13,8 +13,8 @@ Vue.use(VueRouter);
 export const routeNames = {
   ROOT: "root",
   DASHBOARD: "dashboard",
-  MYPROFILE: "myprofile",
-  MYPHOTOS: "myphotos",
+  MY_PROFILE: "my-profile",
+  MY_PHOTOS: "my-photos",
 };
 
 Vue.prototype.$rns = routeNames;
@@ -34,8 +34,8 @@ const router = new VueRouter({
       redirect: {name: routeNames.DASHBOARD}
     },
     {
-      path: "/myprofile",
-      name: routeNames.MYPROFILE,
+      path: "/my-profile",
+      name: routeNames.MY_PROFILE,
       meta: {
         pageInfo: {
           title: "My Profile",
@@ -56,8 +56,8 @@ const router = new VueRouter({
       component: Dashboard
     },
     {
-      path: "/myphotos",
-      name: routeNames.MYPHOTOS,
+      path: "/my-photos",
+      name: routeNames.MY_PHOTOS,
       meta: {
         pageInfo: {
           title: "My Photos",
@@ -74,7 +74,7 @@ const router = new VueRouter({
 });
 
 router.afterEach(function (toRoute) {
-  var title = "Lastweekend-Photos :: ",
+  let title = "Lastweekend-Photos :: ",
       pageInfo = toRoute.meta.pageInfo || {};
   if (pageInfo.title) {
     title = title + pageInfo.title + " :: ";

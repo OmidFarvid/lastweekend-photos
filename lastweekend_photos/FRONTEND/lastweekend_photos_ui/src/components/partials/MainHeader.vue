@@ -1,13 +1,11 @@
 <style scoped>
-  .kt-user-card__email {
-    color: #9e9d9d;
-  }
-
-  .kt-header__topbar .kt-header__topbar-item.kt-header__topbar-item--user .kt-header__topbar-wrapper img {
-    width: 34px;
-    height: 34px;
-  }
-
+.kt-user-card__email {
+  color: #9e9d9d;
+}
+.kt-header__topbar .kt-header__topbar-item.kt-header__topbar-item--user .kt-header__topbar-wrapper img {
+  width: 34px;
+  height: 34px;
+}
 </style>
 <template>
   <div id="kt_header" class="kt-header kt-grid kt-grid--ver  kt-header--fixed ">
@@ -15,7 +13,7 @@
     <div class="kt-header__brand kt-grid__item  " id="kt_header_brand">
       <div class="kt-header__brand-logo">
         <a href="/">
-          <img alt="Logo" :src="`${$publicPath}resources/images/logo-6.png`"/>
+          <img alt="Logo" :src="`${$publicPath}resources/images/logo-6.png`" />
         </a>
       </div>
     </div>
@@ -24,8 +22,7 @@
       Lastweekend Photos
     </h3>
 
-    <button class="kt-header-menu-wrapper-close" id="kt_header_menu_mobile_close_btn"><i class="la la-close"></i>
-    </button>
+    <button class="kt-header-menu-wrapper-close" id="kt_header_menu_mobile_close_btn"><i class="la la-close"></i></button>
     <div class="kt-header-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_header_menu_wrapper">
       <div id="kt_header_menu" class="kt-header-menu kt-header-menu-mobile  kt-header-menu--layout-default ">
         <ul class="kt-menu__nav ">
@@ -34,8 +31,8 @@
               <i class="kt-menu__link-icon flaticon2-protection"></i><span class="kt-menu__link-text">Dashboard</span>
             </a>
           </li>
-          <li class="kt-menu__item" :class="{'kt-menu__item--active': isActive($rns.MYPHOTOS)}" aria-haspopup="true">
-            <a is="router-link" :to="{name: $rns.MYPHOTOS}" class="kt-menu__link ">
+          <li class="kt-menu__item" :class="{'kt-menu__item--active': isActive($rns.MY_PHOTOS)}" aria-haspopup="true">
+            <a is="router-link" :to="{name: $rns.MY_PHOTOS}" class="kt-menu__link ">
               <i class="kt-menu__link-icon flaticon-photo-camera"></i><span class="kt-menu__link-text">My Photos</span>
             </a>
           </li>
@@ -101,7 +98,7 @@
           </div>
 
           <div class="kt-notification">
-            <a is="router-link" :to="{name: $rns.MYPROFILE}" class="kt-notification__item">
+            <a is="router-link" :to="{name: $rns.MY_PROFILE}" class="kt-notification__item">
               <div class="kt-notification__item-icon">
                 <i class="flaticon2-calendar-3 kt-font-success"></i>
               </div>

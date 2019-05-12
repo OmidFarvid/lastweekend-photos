@@ -10,8 +10,8 @@
               <i class="kt-menu__link-icon flaticon2-protection"></i><span class="kt-menu__link-text">Dashboard</span>
             </a>
           </li>
-          <li class="kt-menu__item" :class="{'kt-menu__item--active': isActive($rns.MYPHOTOS)}" aria-haspopup="true">
-            <a is="router-link" :to="{name: $rns.MYPHOTOS}" class="kt-menu__link ">
+          <li class="kt-menu__item" :class="{'kt-menu__item--active': isActive($rns.MY_PHOTOS)}" aria-haspopup="true">
+            <a is="router-link" :to="{name: $rns.MY_PHOTOS}" class="kt-menu__link ">
               <i class="kt-menu__link-icon flaticon-photo-camera"></i><span class="kt-menu__link-text">My Photos</span>
             </a>
           </li>

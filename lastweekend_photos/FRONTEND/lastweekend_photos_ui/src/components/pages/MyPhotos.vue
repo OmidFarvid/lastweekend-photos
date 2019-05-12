@@ -133,7 +133,7 @@
         </div>
         <div class="col-md-9">
           <div class="row">
-            <div class="col-md-4 mt-3" v-for="img in images" v-bind:key="img">
+            <div class="col-md-4 mt-3" v-for="(img, index) in images" v-bind:key="index">
               <img v-bind:src="'resources/images/'+img.address" @click="selectImage(img)"
                    v-bind:class="{'active-image':img.active}"
                    style="width: 100%;height: auto;">
