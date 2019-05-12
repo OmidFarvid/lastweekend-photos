@@ -131,7 +131,9 @@
                               <span class="la la-thumbs-o-up"></span>
                             </div>
                             <div class="col-md-1">
+                              <a is="router-link" :to="{name: $rns.DOWNLOAD}" class="kt-menu__link ">
                               <span class="la la-download"></span>
+                              </a>
                             </div>
                           </div>
                         </div>
