@@ -15,7 +15,7 @@
   }
 
   .grey-gallery {
-    background-color: #777777;
+    background-color: #ffffff;
   }
 
   .no-padding {
@@ -31,7 +31,7 @@
     display: flex;
     width: 100% !important;
     max-width: 100% !important;
-    background-color: #777777;
+    background-color: #ffffff;
   }
 
   .modal-content {
