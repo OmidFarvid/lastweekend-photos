@@ -22,9 +22,20 @@
     padding: 0px !important;
   }
 
-  .active-image {
-    border: 4px darkred solid;
+  .modal-body {
+    display: contents;
   }
+
+  .modal .modal-content {
+    height: 100%;
+    /* top: 0px; */
+    /* bottom: 0px; */
+    position: absolute;
+    vertical-align: middle;
+    color: #000000;
+    background-color: #ffffff;
+  }
+
 
   .modal-full {
     height: 93%;
@@ -96,6 +107,9 @@
     width: 100%;
   }
 
+  textarea{
+    min-height: 150px;
+  }
 </style>
 <template>
   <div class="kt-portlet">
@@ -127,106 +141,122 @@
         </div>
       </div>
     </div>
-    <modal class="modal fade" id="add_photo_modal" name="add_photo_modal" tabindex="-1" role="dialog" aria-hidden="true"
-           style="display: none;">
-      <div class="modal-dialog modal-full">
-        <div class="modal-content">
-          <div class="modal-body text-center" @drop="drop(event)" @dragover="allowDrop(event)">
-            <div class="upload-content">
-              <p>Drag & drop photos and videos here</p>
-              <p>or</p>
-              <div class="upload-btn-wrapper">
-                <button class="btn-file">Upload a file</button>
-                <input type="file" name="myfile" ref="newPhoto" @change="uploadFile"/>
-              </div>
+    <!--    <b-modal ref="add_photo_modal" class="modal fade" id="add_photo_modal" name="add_photo_modal" tabindex="-1" role="dialog" aria-hidden="true"-->
+    <!--           style="display: none;">-->
+    <b-modal
+            size="lg"
+            centered
+            ref="add_photo_modal"
+            id="add_photo_modal"
+            hide-header="true"
+            hide-footer="true"
+    >
+        <div class="text-center" @drop="drop(event)" @dragover="allowDrop(event)">
+          <div class="upload-content">
+            <p>Drag & drop photos and videos here</p>
+            <p>or</p>
+            <div class="upload-btn-wrapper">
+              <button class="btn-file">Upload a file</button>
+              <input type="file" name="myfile" ref="newPhoto" @change="uploadFile"/>
             </div>
           </div>
         </div>
-        <!-- /.modal-content -->
-      </div>
-      <!-- /.modal-dialog -->
-    </modal>
 
-    <modal class="modal fade modal-scroll in" id="edit_modal" name="edit_modal" tabindex="-1" role="dialog"
-           aria-hidden="true"
-           style="display: none;">
-      <div class="modal-dialog modal-scroll bg-white">
-        <div class="modal-content">
-          <div class="modal-body text-center">
-            <img ref="editableImage" src="">
-            <hr>
-            <input type="text" class="form-control" id="photo.name" placeholder="Pick a name for your photo">
-            <hr>
-            <textarea aria-multiline="true" class="form-control" id="photo.description" placeholder="add a description">
+    </b-modal>
+    <!--    </b-modal>-->
+
+    <!--    <b-modal class="modal fade modal-scroll in" id="edit_modal" name="edit_modal" tabindex="-1" role="dialog"-->
+    <!--           aria-hidden="true"-->
+    <!--           style="display: none;">-->
+    <b-modal
+            size="lg"
+            ref="edit_modal"
+            hide-header="true"
+            hide-footer="true"
+    >
+      <div class="container bg-white">
+          <img ref="editableImage" src="">
+          <hr>
+          <input type="text" class="form-control" id="photo.name" placeholder="Pick a name for your photo">
+          <hr>
+          <textarea aria-multiline="true" class="form-control" id="photo.description" placeholder="add a description">
           </textarea>
-            <hr>
-            <input type="text" class="form-control" id="photo.tag" placeholder="add some tag and press enter">
-            <hr>
-            <input type="text" class="form-control" id="photo.people" placeholder="add people by name or ID or email">
-            <hr>
-            <span>add to album</span>
-            <div>
-              <select class="form-control">
-                <option>
-                  choose your album
-                </option>
-                <option>
-                  album 1
-                </option>
-                <option>
-                  album 2
-                </option>
-              </select>
-            </div>
-            <div class="text-left">
-              <a href="#">or create a new group</a>
-            </div>
-            <hr>
-            <span>add to group</span>
-            <div>
-              <select class="form-control">
-                <option>
-                  choose your group
-                </option>
-                <option>
-                  album 1
-                </option>
-                <option>
-                  album 2
-                </option>
-              </select>
-            </div>
-            <div class="text-left">
-              <a href="#">or create a new group</a>
-            </div>
-            <button class="btn btn-success">Save</button>
-            &nbsp
-            <button class="btn btn-danger" @click="closeEditModal">Close</button>
+          <hr>
+          <input type="text" class="form-control" id="photo.tag" placeholder="add some tag and press enter">
+          <hr>
+          <input type="text" class="form-control" id="photo.people" placeholder="add people by name or ID or email">
+          <hr>
+          <span>add to album</span>
+          <div>
+            <select class="form-control">
+              <option>
+                choose your album
+              </option>
+              <option>
+                album 1
+              </option>
+              <option>
+                album 2
+              </option>
+            </select>
           </div>
-        </div>
+          <div class="text-left">
+            <a href="#">or create a new group</a>
+          </div>
+          <hr>
+          <span>add to group</span>
+          <div>
+            <select class="form-control">
+              <option>
+                choose your group
+              </option>
+              <option>
+                album 1
+              </option>
+              <option>
+                album 2
+              </option>
+            </select>
+          </div>
+          <div class="text-left">
+            <a href="#">or create a new group</a>
+          </div>
+          <button class="btn btn-success">Save</button>
+          &nbsp
+          <button class="btn btn-danger" @click="closeEditModal">Close</button>
         <!-- /.modal-content -->
+        <!-- /.modal-dialog -->
       </div>
-      <!-- /.modal-dialog -->
-    </modal>
+    </b-modal>
 
-    <modal class="modal fade modal-scroll in" id="fullscreen_modal" name="fullscreen_modal" tabindex="-1" role="dialog"
-           aria-hidden="true"
-           style="display: none;">
-      <div class="modal-dialog modal-full bg-white">
+<!--    <b-modal class="modal fade modal-scroll in" id="fullscreen_modal" name="fullscreen_modal" tabindex="-1"-->
+<!--             role="dialog"-->
+<!--             aria-hidden="true"-->
+<!--             style="display: none;">-->
+       <b-modal
+            size="lg"
+            ref="fullscreen_modal"
+            hide-header="true"
+            hide-footer="true"
+    >
+      <div class="modal-full">
         <div class="modal-content">
           <div class="modal-body text-center">
             <img ref="fullscreenImage" src="">
           </div>
         </div>
       </div>
-    </modal>
+    </b-modal>
   </div>
 
 </template>
 
 <script>
+  import bModal from "bootstrap-vue/es/components/modal/modal";
+
   export default {
     name: "MyPhotos",
+    "b-modal": bModal,
     methods: {
       drop: function () {
         alert('drop');
@@ -235,24 +265,24 @@
         ev.preventDefault();
       },
       openFileModal: function () {
-        $('#add_photo_modal').modal('show')
+        this.$refs.add_photo_modal.show();
       },
       closeFileModal: function () {
-        $('#add_photo_modal').modal('hide')
+        this.$refs.add_photo_modal.hide();
       },
       openEditModal: function (index) {
         this.$refs.editableImage.src = this.images[index].address;
-        $('#edit_modal').modal('show')
+        this.$refs.edit_modal.show();
       },
       closeEditModal: function () {
-        $('#edit_modal').modal('hide')
+        this.$refs.edit_modal.hide();
       },
       openFullscreenModal: function (index) {
         this.$refs.fullscreenImage.src = this.images[index].address;
-        $('#fullscreen_modal').modal('show')
+        this.$refs.fullscreen_modal.show();
       },
       closeFullscreenModal: function () {
-        $('#fullscreen_modal').modal('hide')
+        this.$refs.fullscreen_modal.hide();
       },
       removeSelectedImages: function () {
         let images = this.images;
